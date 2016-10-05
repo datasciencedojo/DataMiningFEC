@@ -42,7 +42,6 @@ The individual contributions dataset contain full names of each contributor. Wit
 To avoid curse of dimensionality we have to reduce the number of categorical levels present within our dataset.
 
 * Occupation: this column represents people’s jobs. People were allowed to fill in this field themselves, free-form. As a result, there are a large number of misspellings. The word “veteran” can also be found as “veteren”, “WWII vet” and “vetren”. As a result, there are 33,507 distinct occupations our dataset. Luckily the Bureau of Labor Statistics has done by [classifying each job title into one of 28 occupational type buckets](http://www.bls.gov/ooh/a-z-index.htm) for us. We wrote an [R script](https://github.com/datasciencedojo/DataMiningFEC/blob/master/6 Bucketing Occupation Groups.R) in Azure ML to do this bucketing.
-
 ![Occupation bucketing](https://raw.githubusercontent.com/datasciencedojo/DataMiningFEC/master/images/occupationn_bucketing.PNG)
 
 * State: there are 60 states in this dataset; 50 main US States, Washington DC, and 9 extra states. The extra 9 states represent overseas military bases, citizens working abroad, or other territories such as Pacific Islands. However, these extra 9 states also only account for 4151 rows, which is less than half a percent of data which means there may not be enough representation to learn from these categories. We will use a SQL statement to filter out only the 50 main states plus Washington DC.
