@@ -1,3 +1,13 @@
+#Title
+Preparing a Dataset for Machine Learning using Campaign Finance Data
+
+#Summary
+Play with campaign finance data while learning how to prepare a large dataset for machine learning by processing and engineering features.
+
+#Description
+
+The experiment works on a 2.5 GB dataset and will take about 20 minutes to run in its entirety.
+
 #Objective
 Learn how to prepare a dataset for machine learning by creating labels, processing data, engineering additional features, and cleaning the data.
 
