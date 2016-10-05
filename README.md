@@ -1,5 +1,8 @@
 #Title
-Preparing a Dataset for Machine Learning using Campaign Finance Data
+Data Mining 2016 Presidential Campaign Finance Data
+
+#Tags
+campaign finance, elections, preprocessing, data cleaning, data cleansing, feature engineering, free data, large dataset, government, politics, public data
 
 #Summary
 Play with campaign finance data while learning how to prepare a large dataset for machine learning by processing and engineering features.
@@ -68,6 +71,7 @@ Note that any rows containing missing values of the response label have to be re
 There is a steep asymetric between the class labels, whereas Clinton transactions (94%) are way more common than Trump transactions (6%). Class imbalance is quite common in machine learning, where one class is rarer than another. Some examples include medical diagnosis of tumor cells, a certain hormone that signifies pregnancy, or a fraudulent credit card transaction. There are many ways to [combat class imbalance](http://machinelearningmastery.com/tactics-to-combat-imbalanced-classes-in-your-machine-learning-dataset/), however the one that is employed here will be to [down sample the common class](http://www.ijmlc.org/papers/307-K0020.pdf) or to oversample the rare class. Clinton’s transactions were randomly sampled down (7%) to match Trump’s 58k transactions. This sampling percentage also becomes a tuning parameter for future predictive models.
 
 ![Down Sampling Common Class](https://raw.githubusercontent.com/datasciencedojo/DataMiningFEC/master/images/down_sampling_common_class.PNG)
+
 #Next Steps
 The data should be in a state where it can be fed into one of [many machine learning algorithms](https://azure.microsoft.com/en-us/documentation/articles/machine-learning-algorithm-cheat-sheet/) to build a model. There were also a lot of features dropped that would be ripe for feature engineering further. For example, the “memo” column contains important clarification on each transactions such as if the transaction was a refund, an earmark, and other interesting items. Research and extracting into this column can yield a more granular dataset for the model. The “image number” column also contains within it month and day of the receipt’s scan. Extracting day of the week can yield other interesting features such as whether or not it’s a holiday or not. 
 
