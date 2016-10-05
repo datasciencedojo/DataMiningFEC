@@ -32,6 +32,7 @@ We use the apply SQL transformation module to identify and isolate Clinton or Tr
 
 Keep in mind that we are ignoring more complex transactions to Clinton and Trump such as JFC funds, DNC or RNC contributions, or non-officially affiliated committees.
 
+![Cross referencig data](https://raw.githubusercontent.com/datasciencedojo/DataMiningFEC/master/images/refrencing_data.png)
 #Feature Engineering Gender
 The individual contributions dataset contain full names of each contributor. With this we can pull in data from the [Social Security Administration's baby names dataset](http://www.ssa.gov/oact/babynames/limits.html) to predict genders by first names. We will use [R to extract first names and titles](https://github.com/datasciencedojo/DataMiningFEC/blob/master/5 Extracting First Names.R) then cross reference the extracted values in the gender model to derive gender using the join module.
 
