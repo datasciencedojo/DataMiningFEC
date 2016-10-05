@@ -55,13 +55,14 @@ To avoid curse of dimensionality we have to reduce the number of categorical lev
 
 * Contribution amounts: this feature does not have to be bucketed. However, in the experiment, we show that you can [bucket numeric features by quantile](https://stat.ethz.ch/R-manual/R-devel/library/stats/html/quantile.html) percentages. 
 
-![Reducing cities](https://raw.githubusercontent.com/datasciencedojo/DataMiningFEC/master/images/bucket_contribution_amounts.PNG)
-
+![Bucketing transaction amounts](https://raw.githubusercontent.com/datasciencedojo/DataMiningFEC/master/images/bucket_contribution_amounts.PNG)
 
 #Cleaning Missing Data
 All columns have missing values. For simplicity all missing values were replaced with a separate category called “OTHER”. However, it is advised at this step to experiment with different methods of missing value cleansing to see if there is a performance increase.
 
 Note that any rows containing missing values of the response label have to be removed because supervised learning models can only learn if there is a label present for a given row.
+
+![Cleaning all missing values](https://raw.githubusercontent.com/datasciencedojo/DataMiningFEC/master/images/clean_missing_data.PNG)
 
 #Dealing with Class Imbalance
 There is a steep asymetric between the class labels, whereas Clinton transactions (94%) are way more common than Trump transactions (6%). Class imbalance is quite common in machine learning, where one class is rarer than another. Some examples include medical diagnosis of tumor cells, a certain hormone that signifies pregnancy, or a fraudulent credit card transaction. There are many ways to [combat class imbalance](http://machinelearningmastery.com/tactics-to-combat-imbalanced-classes-in-your-machine-learning-dataset/), however the one that is employed here will be to [down sample the common class](http://www.ijmlc.org/papers/307-K0020.pdf) or to oversample the rare class. Clinton’s transactions were randomly sampled down (7%) to match Trump’s 58k transactions. This sampling percentage also becomes a tuning parameter for future predictive models.
