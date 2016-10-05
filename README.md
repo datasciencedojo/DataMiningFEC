@@ -27,12 +27,13 @@ The individual transactions dataset also contains transactions to all Senators, 
 #Pulling in Reference Data
 We will use the [committee linkage file](ftp://ftp.fec.gov/FEC/2016/ccl16.zip) which shows the existing relationships between committees to candidates (if a relationship exists) by “candidate id” and “committee id”. There also exists a [candidate master file](ftp://ftp.fec.gov/FEC/2012/cn12.zip) which lists out every candidate by “candidate id”. Lastly there is a [committee list](ftp://ftp.fec.gov/FEC/2016/cm16.zip) that lists out every committee by “committee id”.
 
+![Reference data](https://raw.githubusercontent.com/datasciencedojo/DataMiningFEC/master/images/reference_data.png)
 #Identifying Clinton and Trump Comittees
 We use the apply SQL transformation module to identify and isolate Clinton or Trump affiliated committees and also their respective victory funds. Then perform an [inner join](http://www.dofactory.com/sql/join) using the join module to filter out only the relevant transactions for Clinton or Trump.
 
 Keep in mind that we are ignoring more complex transactions to Clinton and Trump such as JFC funds, DNC or RNC contributions, or non-officially affiliated committees.
 
-![Cross referencig data](https://raw.githubusercontent.com/datasciencedojo/DataMiningFEC/master/images/refrencing_data.png)
+![Cross referencing data](https://raw.githubusercontent.com/datasciencedojo/DataMiningFEC/master/images/refrencing_data.png)
 #Feature Engineering Gender
 The individual contributions dataset contain full names of each contributor. With this we can pull in data from the [Social Security Administration's baby names dataset](http://www.ssa.gov/oact/babynames/limits.html) to predict genders by first names. We will use [R to extract first names and titles](https://github.com/datasciencedojo/DataMiningFEC/blob/master/5 Extracting First Names.R) then cross reference the extracted values in the gender model to derive gender using the join module.
 
