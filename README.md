@@ -27,7 +27,7 @@ The individual transactions dataset also contains transactions to all Senators, 
 #Pulling in Reference Data
 We will use the [committee linkage file](ftp://ftp.fec.gov/FEC/2016/ccl16.zip) which shows the existing relationships between committees to candidates (if a relationship exists) by “candidate id” and “committee id”. There also exists a [candidate master file](ftp://ftp.fec.gov/FEC/2012/cn12.zip) which lists out every candidate by “candidate id”. Lastly there is a [committee list](ftp://ftp.fec.gov/FEC/2016/cm16.zip) that lists out every committee by “committee id”.
 
-![Reference data](https://raw.githubusercontent.com/datasciencedojo/DataMiningFEC/master/images/reference_data.png)
+![Reference data](https://raw.githubusercontent.com/datasciencedojo/DataMiningFEC/master/images/cross_reference_data.PNG)
 #Identifying Clinton and Trump Comittees
 We use the apply SQL transformation module to identify and isolate Clinton or Trump affiliated committees and also their respective victory funds. Then perform an [inner join](http://www.dofactory.com/sql/join) using the join module to filter out only the relevant transactions for Clinton or Trump.
 
