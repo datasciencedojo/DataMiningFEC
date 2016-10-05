@@ -63,15 +63,6 @@ All columns have missing values. For simplicity all missing values were replaced
 
 Note that any rows containing missing values of the response label have to be removed because supervised learning models can only learn if there is a label present for a given row.
 
-#Statistical Feature Selection
-Not every feature in its current form is expected to contain predictive value to the model, and may mislead or add noise to the model. To filter these out we will perform a [Pearson correlation](https://en.wikipedia.org/wiki/Pearson_product-moment_correlation_coefficient) test all features against the response class (sales price) as a quick measure of their predictive strength, only picking the top X strongest features from this method, the remaining features will be left behind.
-This number can be tuned for further model performance increases.
-
-#Algorithm
-A regularized gradient descent variant of the linear regression model will be used to reduce over-fitting of the model.
-
-* To ensure a stable convergence of weight and biases, all features except the response class must be normalized to be placed into the same range.
-
 #Dealing with Class Imbalance
 There is a steep asymetric between the class labels, whereas Clinton transactions (94%) are way more common than Trump transactions (6%). Class imbalance is quite common in machine learning, where one class is rarer than another. Some examples include medical diagnosis of tumor cells, a certain hormone that signifies pregnancy, or a fraudulent credit card transaction. There are many ways to [combat class imbalance](http://machinelearningmastery.com/tactics-to-combat-imbalanced-classes-in-your-machine-learning-dataset/), however the one that is employed here will be to [down sample the common class](http://www.ijmlc.org/papers/307-K0020.pdf) or to oversample the rare class. Clinton’s transactions were randomly sampled down (7%) to match Trump’s 58k transactions. This sampling percentage also becomes a tuning parameter for future predictive models.
 
